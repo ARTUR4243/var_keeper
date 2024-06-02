@@ -19,8 +19,8 @@ jobs:
       - name: Log into DockerHUB
         uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
         with:
-          username: ${{ secrets.artur }}
-          password: ${{ secrets.111 }}
+          username: ${{ secrets.DOCHUB_USERNAME }}
+          password: ${{ secrets.DOCHUB_TOKEN }}
           
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@79abd3f86f79a9d68a23c75a09a9a85889262adf
@@ -34,4 +34,4 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: ${{ vars.artur111 }}/var_keeper:${{ steps.cut.outputs.sha_short }}
+          tags: ${{ vars.DOCHUB_USERNAME }}/var_keeper:${{ steps.cut.outputs.sha_short }}

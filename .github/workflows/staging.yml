@@ -34,4 +34,4 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: ${{ vars.artur }}/var_keeper:${{ steps.cut.outputs.sha_short }}
+          tags: ${{ vars.artur111 }}/var_keeper:${{ steps.cut.outputs.sha_short }}
